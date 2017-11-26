@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
+import Button from'./button/index';
+import Form from'./Form';
+
 class Header extends Component{
     render(){
         return(
@@ -10,8 +13,11 @@ class Header extends Component{
                 <ul>
                     <li><Link to="/">Dashboard</Link></li>
                     <li><Link to="/todo">To Do</Link></li>
+                    <li><Link to="/form">Form</Link></li>
                     <li><Link to="/counter">Counter</Link></li>
                 </ul>
+
+                <Button label='OK'/>
             </div>
         );
     }
