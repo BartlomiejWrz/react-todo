@@ -42,7 +42,10 @@ class Users extends Component{
                 {this.renderIndicator()}
                 <button onClick={this.fetchData}>Pobierz dane</button>
                 {this.state.users.map((user, index) =>(
-                    <div key={index}>{user.name}</div>
+                    <div key={index}>
+                        <div>{user.name}</div>
+                        <div>{user.username}</div>
+                    </div>
                 ))}
             </div>
         );

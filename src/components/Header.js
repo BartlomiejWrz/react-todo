@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
 import Button from'./button/index';
+import Container from './tasks/Container';
 import Users from'./Users';
 import Form from'./Form';
 
@@ -18,6 +19,7 @@ class Header extends Component{
                     <li><Link to="/Form">Form</Link></li>
                     <li><Link to="/counter">Counter</Link></li>
                     <li><Link to="/Users">Users</Link></li>
+                    <li><Link to="/Container">Tasks</Link></li>
                 </ul>
 
                 <Button label='OK'/>
