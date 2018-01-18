@@ -1,31 +1,19 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import Container from './Container';
+import Search from "./Search";
 
-import Button from'./button/index';
-import Container from './tasks/Container';
-import Users from'./Users';
-import Form from'./Form';
+
 
 
 class Header extends Component{
     render(){
         return(
             <div>
-
-                <h1>App header</h1>
-                <ul>
-                    <li><Link to="/">Dashboard</Link></li>
-                    <li><Link to="/todo">To Do</Link></li>
-                    <li><Link to="/Form">Form</Link></li>
-                    <li><Link to="/counter">Counter</Link></li>
-                    <li><Link to="/Users">Users</Link></li>
-                    <li><Link to="/Container">Tasks</Link></li>
-                </ul>
-
-                <Button label='OK'/>
+                <h1>Moja lista to do</h1>
+                <Container/>
+                <Search/>
             </div>
         );
     }
 }
-
 export default Header;

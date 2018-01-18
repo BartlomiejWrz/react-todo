@@ -12,21 +12,9 @@ class ToDo extends Component{
         }
     }
 
-    componentDidMount(){
-        setInterval(()=>{
-        this.setState({
-            tasks:[
-                'ala', 'ma', 'kota'
-            ]
-        });
-    },5000);
-    }
-
-
     render(){
         return(
             <div>
-                <h2>My to do list</h2>
                 <ol>
                     {this.state.tasks.map((task, index)=>(
                         <li key = {index}>{task}</li>

@@ -1,5 +1,5 @@
 import React,  {Component} from 'react';
-import Task from './task';
+import ToDo from './ToDo';
 
 class Container extends Component {
     constructor(props) {
@@ -35,7 +35,7 @@ class Container extends Component {
     render() {
         return (
             <div>
-                <input type="text" placeholder="Search..." onChange={this.searchChanged}/>
+
                 <form onSubmit={this.handleSubmit}>
                     <input type="text"
                            value={this.state.task}
@@ -43,14 +43,13 @@ class Container extends Component {
                            onChange={this.textChanged}/>
                     <input type="submit" value="Add"/>
                 </form>
-                <h2>My tasks</h2>
-                {
-                    this.state.tasks
-                        .filter((task) => task.indexOf(this.state.query) !== -1)
-                        .map.((task, index) => (
-                        <Task key={index} label={task}/>
-                    ))
-                }
+
+                <input type="text" placeholder="Search..." onChange={this.searchChanged}/>
+
+                <h2>Moje zadania</h2>
+
+                <ToDo/>
+
             </div>
         );
     }

@@ -16,8 +16,7 @@ class Search extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input type="text" ref={field => this.searchField = field}/>
-                <input type="submit" value="search"/>
+
             </form>
         );
     }
