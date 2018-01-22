@@ -52,30 +52,31 @@ class Container extends Component {
                 <Grid item xs={12} sm={12}>
                     <form onSubmit={this.handleSubmit}>
                         <TextField
+                            style={{ color: '#FF8A80' }}
                             id="task"
-                            label="Task"
+                            label="Zadanie"
                             value={this.state.task}
                             onChange={this.textChanged}
                             margin="normal"
                         />
-                        <Button type="submit" raised color="primary">Add</Button>
+                        <Button type="submit" style={{ backgroundColor: '#B71C1C', color: '#FF8A80' }}>Add</Button>
                     </form>
                     <TextField
                         id="task"
-                        label="Search"
+                        label="Szukaj"
                         onChange={this.searchChanged}
                         margin="normal"
                     />
                 </Grid>
-                    <Grid item xs={3} sm={3} />
-                    <Grid item xs={6} sm={6}>
+                    <Grid item xs={1} sm={1} />
+                    <Grid item xs={10} sm={10}>
                         <h2>Lista zadań</h2>
                         <TasksList
                             query={this.state.query}
                             tasks={this.state.tasks}
                             onRemove={this.handleOnRemove}
                         />
-                    <Grid item xs={3} sm={3} />
+                    <Grid item xs={1} sm={1} />
                 </Grid>
 
             </Grid>

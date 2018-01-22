@@ -7,7 +7,7 @@ import Checkbox from 'material-ui/Checkbox';
 
 const style = {
     checked: {
-        color: 'red',
+        color: '#B71C1C',
         textDecoration: 'line-through'
     },
     unChecked: {}
