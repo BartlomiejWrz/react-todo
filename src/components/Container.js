@@ -1,27 +1,28 @@
 import React,  {Component} from 'react';
-import ToDo from './ToDo';
+import TextField from 'material-ui/TextField';
+import Button from 'material-ui/Button';
+import Grid from 'material-ui/Grid';
 
 class Container extends Component {
-    constructor(props) {
+    constructor(props){
         super(props);
-        this.textChanged = this.textChanged.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.state = {
+        this.state ={
+            query: '',
             task: '',
-            tasks: []
+            tasks:['Nauczyć sie do testu', 'zjeść bulke', 'posprzatac']
         };
+        this.textChanged = this.textChanged.bind(this);
+        this.searchChanged = this.searchChanged.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleOnRemove = this.handleOnRemove.bind(this);
     }
 
     textChanged(event) {
-        this.setState({task: event.target.value})
+        this.setState({task: event.target.value});
     }
 
-    searchChanged(event){
-        this.setState({
-            tasks: this.state.tasks.concat(this.state.task),
-            task: ''
-        });
-        event.preventDefault();
+    searchChanged(event) {
+        this.setState({query: event.target.value});
     }
 
     handleSubmit(event) {
@@ -32,30 +33,47 @@ class Container extends Component {
         event.preventDefault();
     }
 
-    render() {
-        return (
-            <div>
+    handleOnRemove(taskToRemove) {
+        this.setState({
+            tasks: this.state.tasks.filter(task => task !== taskToRemove),
+            task: ''
+        });
+    }
 
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text"
-                           value={this.state.task}
-                           placeholder="Add task ..."
-                           onChange={this.textChanged}/>
-                    <input type="submit" value="Add"/>
-                </form>
-
-                <input type="text" placeholder="Search..." onChange={this.searchChanged}/>
-
-                <h2>Moje zadania</h2>
-
-                <ToDo/>
-
-            </div>
+    render(){
+        return(
+            <Grid container spacing={24}>
+                <Grid item xs={12} sm={6}>
+                    <form onSubmit={this.handleSubmit}>
+                        <TextField
+                            id="task"
+                            label="Task"
+                            value={this.state.task}
+                            onChange={this.textChanged}
+                            margin="normal"
+                        />
+                        <Button type="submit" raised color="primary">Add</Button>
+                    </form>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                    <TextField
+                        id="task"
+                        label="Search"
+                        onChange={this.searchChanged}
+                        margin="normal"
+                    />
+                </Grid>
+                <Grid item xs={12} sm={12}>
+                    <h2>Lista zadań</h2>
+                    {this.state.tasks.map((task, index)=>(
+                        <li key = {index}>{task}</li>
+                    ))}
+                </Grid>
+            </Grid>
         );
     }
 }
 
-
-export default Container
+export default Container;
 
 
