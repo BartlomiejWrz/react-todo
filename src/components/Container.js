@@ -3,6 +3,8 @@ import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import Grid from 'material-ui/Grid';
 
+import TasksList from './Searching';
+
 class Container extends Component {
     constructor(props){
         super(props);
@@ -43,7 +45,7 @@ class Container extends Component {
     render(){
         return(
             <Grid container spacing={24}>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} sm={12}>
                     <form onSubmit={this.handleSubmit}>
                         <TextField
                             id="task"
@@ -54,8 +56,6 @@ class Container extends Component {
                         />
                         <Button type="submit" raised color="primary">Add</Button>
                     </form>
-                </Grid>
-                <Grid item xs={12} sm={6}>
                     <TextField
                         id="task"
                         label="Search"
@@ -65,9 +65,11 @@ class Container extends Component {
                 </Grid>
                 <Grid item xs={12} sm={12}>
                     <h2>Lista zadań</h2>
-                    {this.state.tasks.map((task, index)=>(
-                        <li key = {index}>{task}</li>
-                    ))}
+                    <TasksList
+                        query={this.state.query}
+                        tasks={this.state.tasks}
+                        onRemove={this.handleOnRemove}
+                    />
                 </Grid>
             </Grid>
         );

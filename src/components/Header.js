@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Container from './Container';
-import Search from "./Search";
 
 
 
@@ -11,7 +10,6 @@ class Header extends Component{
             <div>
                 <h1>Moja lista to do</h1>
                 <Container/>
-                <Search/>
             </div>
         );
     }

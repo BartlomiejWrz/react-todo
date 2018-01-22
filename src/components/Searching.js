@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import List from 'material-ui/List';
 
-class Searching = (props) => (
+import Task from './Task';
+
+const TasksList = (props) => (
     <List>
         {props.tasks.filter((task) => task.toUpperCase().indexOf(props.query.toUpperCase()) !== -1)
             .map((task, index) => (
@@ -11,6 +13,6 @@ class Searching = (props) => (
     </List>
 );
 
-export default Searching;
+export default TasksList;
 
 
