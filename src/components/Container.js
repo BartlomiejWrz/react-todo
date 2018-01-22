@@ -2,8 +2,11 @@ import React,  {Component} from 'react';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import Grid from 'material-ui/Grid';
+import Paper from 'material-ui/Paper';
 
 import TasksList from './Searching';
+
+
 
 class Container extends Component {
     constructor(props){
@@ -45,6 +48,7 @@ class Container extends Component {
     render(){
         return(
             <Grid container spacing={24}>
+
                 <Grid item xs={12} sm={12}>
                     <form onSubmit={this.handleSubmit}>
                         <TextField
@@ -63,15 +67,19 @@ class Container extends Component {
                         margin="normal"
                     />
                 </Grid>
-                <Grid item xs={12} sm={12}>
-                    <h2>Lista zadań</h2>
-                    <TasksList
-                        query={this.state.query}
-                        tasks={this.state.tasks}
-                        onRemove={this.handleOnRemove}
-                    />
+                    <Grid item xs={3} sm={3} />
+                    <Grid item xs={6} sm={6}>
+                        <h2>Lista zadań</h2>
+                        <TasksList
+                            query={this.state.query}
+                            tasks={this.state.tasks}
+                            onRemove={this.handleOnRemove}
+                        />
+                    <Grid item xs={3} sm={3} />
                 </Grid>
+
             </Grid>
+
         );
     }
 }
