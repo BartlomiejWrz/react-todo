@@ -14,7 +14,7 @@ class Container extends Component {
         this.state ={
             query: '',
             task: '',
-            tasks:['Nauczyć sie do testu', 'zjeść bulke', 'posprzatac']
+            tasks:['Nauczyć sie do testu', 'zjeść obiad', 'posprzatac']
         };
         this.textChanged = this.textChanged.bind(this);
         this.searchChanged = this.searchChanged.bind(this);
