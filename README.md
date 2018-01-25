@@ -1,3 +1,3 @@
 # My react-todo app
 
-[Demo click here](https://BartlomiejWrz.github.io/react-todo/)
+[Demo click here](https://BartlomiejWrz/react-todo/)
