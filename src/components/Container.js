@@ -2,7 +2,7 @@ import React,  {Component} from 'react';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import Grid from 'material-ui/Grid';
-import Paper from 'material-ui/Paper';
+
 
 import TasksList from './Searching';
 
