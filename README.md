@@ -2,4 +2,4 @@
 
 
 
-{link to working app] (https://github.com/BartlomiejWrz/react-todo)
+{link to working app] (https://BartlomiejWrz/react-todo)
